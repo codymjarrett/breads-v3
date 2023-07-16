@@ -14,7 +14,7 @@ baker.get('/', function(req, res){
 // this route uses the virtual in our baker model
 baker.get('/:id', (req, res) => {
   Baker.findById(req.params.id)
-  .populate({path: 'breads', options: {limit: 1}})
+  .populate({path: 'breads',})
   .then(foundBaker => {
     res.render('bakerShow', {
       baker: foundBaker

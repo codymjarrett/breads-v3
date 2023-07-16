@@ -61,7 +61,7 @@ breads.get('/:id', function(req, res) {
     Bread.findById(id)
     .populate('baker')
     .then(foundBread => {
-      res.render('Show', {
+      res.render('show', {
         bread: foundBread,
       })
   
